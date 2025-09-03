@@ -1,6 +1,6 @@
 import { OrganizationOnboardingRepository } from "@calcom/lib/server/repository/organizationOnboarding";
 
-import type { TrpcSessionUser } from "../../../types";
+import type { TrpcSessionUser } from "@calcom/lib/sessionUser";
 
 type OrganizationOnboarding = {
   ctx: {

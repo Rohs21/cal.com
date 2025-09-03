@@ -26,7 +26,7 @@ import { eventTypeLocations } from "@calcom/prisma/zod-utils";
 
 import { TRPCError } from "@trpc/server";
 
-import type { TrpcSessionUser } from "../../../types";
+import type { TrpcSessionUser } from "@calcom/lib/sessionUser";
 import { setDestinationCalendarHandler } from "../../viewer/calendars/setDestinationCalendar.handler";
 import type { TUpdateInputSchema } from "./update.schema";
 import {

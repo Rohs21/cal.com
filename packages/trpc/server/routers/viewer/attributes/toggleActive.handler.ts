@@ -5,7 +5,7 @@ import { MembershipRole } from "@calcom/prisma/client";
 
 import { TRPCError } from "@trpc/server";
 
-import type { TrpcSessionUser } from "../../../types";
+import type { TrpcSessionUser } from "@calcom/lib/sessionUser";
 import type { ZToggleActiveSchema } from "./toggleActive.schema";
 
 type GetOptions = {

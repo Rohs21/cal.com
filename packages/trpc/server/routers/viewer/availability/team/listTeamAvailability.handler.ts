@@ -9,7 +9,7 @@ import { prisma } from "@calcom/prisma";
 
 import { TRPCError } from "@trpc/server";
 
-import type { TrpcSessionUser } from "../../../../types";
+import type { TrpcSessionUser } from "@calcom/lib/sessionUser";
 import type { TListTeamAvailaiblityScheme } from "./listTeamAvailability.schema";
 
 type GetOptions = {

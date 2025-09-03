@@ -1,7 +1,7 @@
 import { prisma } from "@calcom/prisma";
 import { SMSLockState } from "@calcom/prisma/client";
 
-import type { TrpcSessionUser } from "../../../types";
+import type { TrpcSessionUser } from "@calcom/lib/sessionUser";
 
 type GetOptions = {
   ctx: {

@@ -1,6 +1,6 @@
 import type { PrismaClient } from "@calcom/prisma";
 
-import type { TrpcSessionUser } from "../../../../types";
+import type { TrpcSessionUser } from "@calcom/lib/sessionUser";
 import { getHandler } from "./get.handler";
 import type { TGetByEventSlugInputSchema } from "./getScheduleByEventTypeSlug.schema";
 

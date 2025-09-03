@@ -1,6 +1,6 @@
 import { PrismaApiKeyRepository } from "@calcom/lib/server/repository/PrismaApiKeyRepository";
 
-import type { TrpcSessionUser } from "../../../types";
+import type { TrpcSessionUser } from "@calcom/lib/sessionUser";
 
 type ListOptions = {
   ctx: {

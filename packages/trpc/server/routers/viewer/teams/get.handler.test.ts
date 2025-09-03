@@ -3,7 +3,7 @@
 // TODO: Bring this test back with the correct setup (no illegal imports)
 import { describe, it, beforeEach, vi, expect } from "vitest";
 
-import type { TrpcSessionUser } from "../../../types";
+import type { TrpcSessionUser } from "@calcom/lib/sessionUser";
 import getTeam from "./get.handler";
 
 describe.skip("getTeam", () => {

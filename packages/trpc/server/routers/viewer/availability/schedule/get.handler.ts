@@ -1,6 +1,6 @@
 import { ScheduleRepository } from "@calcom/lib/server/repository/schedule";
 
-import type { TrpcSessionUser } from "../../../../types";
+import type { TrpcSessionUser } from "@calcom/lib/sessionUser";
 import type { TGetInputSchema } from "./get.schema";
 
 type GetOptions = {

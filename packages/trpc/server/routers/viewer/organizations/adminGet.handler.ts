@@ -1,6 +1,6 @@
 import { OrganizationRepository } from "@calcom/lib/server/repository/organization";
 
-import type { TrpcSessionUser } from "../../../types";
+import type { TrpcSessionUser } from "@calcom/lib/sessionUser";
 import type { TAdminGet } from "./adminGet.schema";
 
 type AdminGetOptions = {
