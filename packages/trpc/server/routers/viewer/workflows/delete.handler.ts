@@ -2,7 +2,7 @@ import { createDefaultAIPhoneServiceProvider } from "@calcom/features/calAIPhone
 import { WorkflowRepository } from "@calcom/lib/server/repository/workflow";
 import { prisma } from "@calcom/prisma";
 import { WorkflowActions } from "@calcom/prisma/enums";
-import type { TrpcSessionUser } from "@calcom/trpc/server/types";
+import type { TrpcSessionUser } from "@calcom/lib/sessionUser";
 
 import { TRPCError } from "@trpc/server";
 

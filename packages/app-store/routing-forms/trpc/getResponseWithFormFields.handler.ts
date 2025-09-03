@@ -3,7 +3,7 @@ import type { z } from "zod";
 import { canAccessEntity } from "@calcom/lib/entityPermissionUtils.server";
 import { getTranslation } from "@calcom/lib/server/i18n";
 import { prisma } from "@calcom/prisma";
-import type { TrpcSessionUser } from "@calcom/trpc/server/types";
+import type { TrpcSessionUser } from "@calcom/lib/sessionUser";
 
 import { TRPCError } from "@trpc/server";
 

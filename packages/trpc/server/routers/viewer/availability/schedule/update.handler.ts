@@ -1,6 +1,6 @@
 import { updateSchedule } from "@calcom/lib/schedules/updateSchedule";
 import { prisma } from "@calcom/prisma";
-import type { TrpcSessionUser } from "@calcom/trpc/server/types";
+import type { TrpcSessionUser } from "@calcom/lib/sessionUser";
 
 import type { TUpdateInputSchema } from "./update.schema";
 

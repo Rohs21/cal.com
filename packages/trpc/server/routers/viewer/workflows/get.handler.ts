@@ -1,6 +1,6 @@
 import { WorkflowRepository } from "@calcom/lib/server/repository/workflow";
 import { addPermissionsToWorkflow } from "@calcom/lib/server/repository/workflow-permissions";
-import type { TrpcSessionUser } from "@calcom/trpc/server/types";
+import type { TrpcSessionUser } from "@calcom/lib/sessionUser";
 
 import { TRPCError } from "@trpc/server";
 

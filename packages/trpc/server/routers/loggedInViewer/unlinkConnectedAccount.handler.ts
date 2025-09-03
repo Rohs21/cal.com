@@ -2,7 +2,7 @@ import type { GetServerSidePropsContext, NextApiResponse } from "next";
 
 import { prisma } from "@calcom/prisma";
 import { IdentityProvider } from "@calcom/prisma/enums";
-import type { TrpcSessionUser } from "@calcom/trpc/server/types";
+import type { TrpcSessionUser } from "@calcom/lib/sessionUser";
 
 type UpdateProfileOptions = {
   ctx: {

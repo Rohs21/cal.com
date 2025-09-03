@@ -1,5 +1,5 @@
 import { TeamService } from "@calcom/lib/server/service/teamService";
-import type { TrpcSessionUser } from "@calcom/trpc/server/types";
+import type { TrpcSessionUser } from "@calcom/lib/sessionUser";
 
 import type { TInviteMemberByTokenSchemaInputSchema } from "./inviteMemberByToken.schema";
 

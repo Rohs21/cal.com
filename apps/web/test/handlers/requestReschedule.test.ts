@@ -16,10 +16,10 @@ import type { Request, Response } from "express";
 import type { NextApiRequest, NextApiResponse } from "next";
 import { describe } from "vitest";
 
+import type { TrpcSessionUser } from "@calcom/lib/sessionUser";
 import { SchedulingType } from "@calcom/prisma/enums";
 import { BookingStatus } from "@calcom/prisma/enums";
 import type { TRequestRescheduleInputSchema } from "@calcom/trpc/server/routers/viewer/bookings/requestReschedule.schema";
-import type { TrpcSessionUser } from "@calcom/trpc/server/types";
 import { test } from "@calcom/web/test/fixtures/fixtures";
 
 export type CustomNextApiRequest = NextApiRequest & Request;

@@ -1,7 +1,7 @@
 import { roundRobinReassignment } from "@calcom/features/ee/round-robin/roundRobinReassignment";
 import { BookingRepository } from "@calcom/lib/server/repository/booking";
 import { prisma } from "@calcom/prisma";
-import type { TrpcSessionUser } from "@calcom/trpc/server/types";
+import type { TrpcSessionUser } from "@calcom/lib/sessionUser";
 
 import { TRPCError } from "@trpc/server";
 

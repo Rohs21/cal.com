@@ -1,6 +1,6 @@
 import { getConnectedApps } from "@calcom/lib/getConnectedApps";
 import { prisma } from "@calcom/prisma";
-import type { TrpcSessionUser } from "@calcom/trpc/server/types";
+import type { TrpcSessionUser } from "@calcom/lib/sessionUser";
 
 import type { TIntegrationsInputSchema } from "./integrations.schema";
 

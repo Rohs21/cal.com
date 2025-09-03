@@ -9,7 +9,7 @@ import { addPermissionsToWorkflow } from "@calcom/lib/server/repository/workflow
 import type { PrismaClient } from "@calcom/prisma";
 import { WorkflowActions, WorkflowTemplates } from "@calcom/prisma/enums";
 import { PhoneNumberSubscriptionStatus } from "@calcom/prisma/enums";
-import type { TrpcSessionUser } from "@calcom/trpc/server/types";
+import type { TrpcSessionUser } from "@calcom/lib/sessionUser";
 
 import { TRPCError } from "@trpc/server";
 

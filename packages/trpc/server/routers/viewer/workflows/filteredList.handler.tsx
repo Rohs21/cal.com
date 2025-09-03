@@ -2,7 +2,7 @@ import { WorkflowRepository } from "@calcom/lib/server/repository/workflow";
 import { addPermissionsToWorkflows } from "@calcom/lib/server/repository/workflow-permissions";
 import type { PrismaClient } from "@calcom/prisma";
 import type { Prisma } from "@calcom/prisma/client";
-import type { TrpcSessionUser } from "@calcom/trpc/server/types";
+import type { TrpcSessionUser } from "@calcom/lib/sessionUser";
 
 import type { TFilteredListInputSchema } from "./filteredList.schema";
 

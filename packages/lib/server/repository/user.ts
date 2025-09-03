@@ -23,46 +23,6 @@ export type { UserWithLegacySelectedCalendars } from "../withSelectedCalendars";
 export { withSelectedCalendars };
 export type UserAdminTeams = number[];
 
-export type SessionUser = {
-  id: number;
-  username: string | null;
-  name: string | null;
-  email: string;
-  emailVerified: Date | null;
-  bio: string | null;
-  avatarUrl: string | null;
-  timeZone: string;
-  weekStart: string;
-  startTime: number;
-  endTime: number;
-  defaultScheduleId: number | null;
-  bufferTime: number;
-  theme: string | null;
-  appTheme: string | null;
-  createdDate: Date;
-  hideBranding: boolean;
-  twoFactorEnabled: boolean;
-  disableImpersonation: boolean;
-  identityProvider: string | null;
-  identityProviderId: string | null;
-  brandColor: string | null;
-  darkBrandColor: string | null;
-  movedToProfileId: number | null;
-  completedOnboarding: boolean;
-  destinationCalendar: any;
-  locale: string;
-  timeFormat: number | null;
-  trialEndsAt: Date | null;
-  metadata: any;
-  role: string;
-  allowDynamicBooking: boolean;
-  allowSEOIndexing: boolean;
-  receiveMonthlyDigestEmail: boolean;
-  profiles: any[];
-  allSelectedCalendars: any[];
-  userLevelSelectedCalendars: any[];
-};
-
 const log = logger.getSubLogger({ prefix: ["[repository/user]"] });
 
 export const ORGANIZATION_ID_UNKNOWN = "ORGANIZATION_ID_UNKNOWN";

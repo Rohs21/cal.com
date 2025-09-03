@@ -1,6 +1,6 @@
 import { prisma } from "@calcom/prisma";
 import { credentialForCalendarServiceSelect } from "@calcom/prisma/selects/credential";
-import type { TrpcSessionUser } from "@calcom/trpc/server/types";
+import type { TrpcSessionUser } from "@calcom/lib/sessionUser";
 
 import { enrichUserWithDelegationCredentialsIncludeServiceAccountKey } from "../delegationCredential/server";
 

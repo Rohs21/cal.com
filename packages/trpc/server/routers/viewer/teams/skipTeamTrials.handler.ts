@@ -3,7 +3,7 @@ import { IS_SELF_HOSTED } from "@calcom/lib/constants";
 import logger from "@calcom/lib/logger";
 import { MembershipRepository } from "@calcom/lib/server/repository/membership";
 import { prisma } from "@calcom/prisma";
-import type { TrpcSessionUser } from "@calcom/trpc/server/types";
+import type { TrpcSessionUser } from "@calcom/lib/sessionUser";
 
 import type { TSkipTeamTrialsInputSchema } from "./skipTeamTrials.schema";
 

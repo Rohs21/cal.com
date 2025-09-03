@@ -3,7 +3,7 @@ import { WEBAPP_URL } from "@calcom/lib/constants";
 import { MembershipRepository } from "@calcom/lib/server/repository/membership";
 import { TeamRepository } from "@calcom/lib/server/repository/team";
 import prisma from "@calcom/prisma";
-import type { TrpcSessionUser } from "@calcom/trpc/server/types";
+import type { TrpcSessionUser } from "@calcom/lib/sessionUser";
 
 import { TRPCError } from "@trpc/server";
 

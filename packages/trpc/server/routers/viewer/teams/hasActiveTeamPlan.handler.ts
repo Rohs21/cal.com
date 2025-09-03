@@ -4,7 +4,7 @@ import { InternalTeamBilling } from "@calcom/ee/billing/teams/internal-team-bill
 import { IS_SELF_HOSTED } from "@calcom/lib/constants";
 import { MembershipRepository } from "@calcom/lib/server/repository/membership";
 import { prisma } from "@calcom/prisma";
-import type { TrpcSessionUser } from "@calcom/trpc/server/types";
+import type { TrpcSessionUser } from "@calcom/lib/sessionUser";
 
 import type { THasActiveTeamPlanInputSchema } from "./hasActiveTeamPlan.schema";
 

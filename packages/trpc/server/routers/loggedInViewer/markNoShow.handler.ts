@@ -1,5 +1,5 @@
 import handleMarkNoShow from "@calcom/features/handleMarkNoShow";
-import type { TrpcSessionUser } from "@calcom/trpc/server/types";
+import type { TrpcSessionUser } from "@calcom/lib/sessionUser";
 
 import type { TNoShowInputSchema } from "./markNoShow.schema";
 

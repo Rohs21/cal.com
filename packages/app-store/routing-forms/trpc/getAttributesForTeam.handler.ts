@@ -1,6 +1,6 @@
 import { MembershipRepository } from "@calcom/lib/server/repository/membership";
 import { getAttributesForTeam } from "@calcom/lib/service/attribute/server/getAttributes";
-import type { TrpcSessionUser } from "@calcom/trpc/server/types";
+import type { TrpcSessionUser } from "@calcom/lib/sessionUser";
 
 import { TRPCError } from "@trpc/server";
 

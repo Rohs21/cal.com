@@ -6,7 +6,7 @@ import logger from "@calcom/lib/logger";
 import { hashEmail } from "@calcom/lib/server/PiiHasher";
 import { totpRawCheck } from "@calcom/lib/totp";
 import type { ZVerifyCodeInputSchema } from "@calcom/prisma/zod-utils";
-import type { TrpcSessionUser } from "@calcom/trpc/server/types";
+import type { TrpcSessionUser } from "@calcom/lib/sessionUser";
 
 import { TRPCError } from "@trpc/server";
 

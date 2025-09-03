@@ -1,7 +1,7 @@
 import { CalendarCacheRepository } from "@calcom/features/calendar-cache/calendar-cache.repository";
 import { getConnectedDestinationCalendarsAndEnsureDefaultsInDb } from "@calcom/lib/getConnectedDestinationCalendars";
 import { prisma } from "@calcom/prisma";
-import type { TrpcSessionUser } from "@calcom/trpc/server/types";
+import type { TrpcSessionUser } from "@calcom/lib/sessionUser";
 
 import type { TConnectedCalendarsInputSchema } from "./connectedCalendars.schema";
 

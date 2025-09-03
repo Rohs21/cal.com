@@ -85,7 +85,7 @@ export async function getUserFromSession(ctx: TRPCContextInner, session: Maybe<S
   };
 }
 
-export type UserFromSession = Awaited<ReturnType<typeof getUserFromSession>>;
+export type TrpcSessionUser = Awaited<ReturnType<typeof getUserFromSession>>;
 
 const getSession = async (ctx: TRPCContextInner) => {
   const { req } = ctx;

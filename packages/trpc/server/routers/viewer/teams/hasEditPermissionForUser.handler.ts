@@ -1,5 +1,5 @@
 import { hasEditPermissionForUserID as $hasEditPermissionForUser } from "@calcom/lib/hasEditPermissionForUser";
-import type { TrpcSessionUser } from "@calcom/trpc/server/types";
+import type { TrpcSessionUser } from "@calcom/lib/sessionUser";
 
 import type { THasEditPermissionForUserSchema } from "./hasEditPermissionForUser.schema";
 

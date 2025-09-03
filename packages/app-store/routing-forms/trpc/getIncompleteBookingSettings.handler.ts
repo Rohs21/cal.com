@@ -1,6 +1,6 @@
 import type { PrismaClient } from "@calcom/prisma";
 import { safeCredentialSelect } from "@calcom/prisma/selects/credential";
-import type { TrpcSessionUser } from "@calcom/trpc/server/types";
+import type { TrpcSessionUser } from "@calcom/lib/sessionUser";
 
 import { TRPCError } from "@trpc/server";
 
