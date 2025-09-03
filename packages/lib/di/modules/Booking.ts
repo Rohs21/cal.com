@@ -1,3 +1,4 @@
+import type { Container } from "@evyweb/ioctopus";
 import { createModule } from "@evyweb/ioctopus";
 
 import { DI_TOKENS } from "@calcom/lib/di/tokens";
@@ -8,8 +9,9 @@ const token = DI_TOKENS.BOOKING_REPOSITORY;
 const moduleToken = DI_TOKENS.BOOKING_REPOSITORY_MODULE;
 bookingRepositoryModule.bind(token).toClass(BookingRepository, [DI_TOKENS.PRISMA_CLIENT]);
 
-export const bookingRepositoryModuleWithToken = {
+export const moduleLoader = {
   token,
-  moduleToken,
-  module: bookingRepositoryModule,
+  loadModule: function (container: Container) {
+    container.load(moduleToken, bookingRepositoryModule);
+  },
 };

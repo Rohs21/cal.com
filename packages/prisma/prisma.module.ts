@@ -1,3 +1,4 @@
+import type { Container } from "@evyweb/ioctopus";
 import { createModule } from "@evyweb/ioctopus";
 
 import { DI_TOKENS } from "@calcom/lib/di/tokens";
@@ -10,8 +11,9 @@ const moduleToken = DI_TOKENS.PRISMA_MODULE;
 prismaModule.bind(DI_TOKENS.PRISMA_CLIENT).toFactory(() => prisma, "singleton");
 prismaModule.bind(DI_TOKENS.READ_ONLY_PRISMA_CLIENT).toFactory(() => readonlyPrisma, "singleton");
 
-export const prismaModuleWithToken = {
+export const moduleLoader = {
   token,
-  moduleToken,
-  module: prismaModule,
+  loadModule: (container: Container) => {
+    container.load(moduleToken, prismaModule);
+  },
 };

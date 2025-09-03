@@ -1,3 +1,4 @@
+import type { Container } from "@evyweb/ioctopus";
 import { createModule } from "@evyweb/ioctopus";
 
 import { DI_TOKENS } from "@calcom/lib/di/tokens";
@@ -10,8 +11,9 @@ checkBookingLimitsModule
   .bind(token)
   .toClass(CheckBookingLimitsService, { bookingRepo: DI_TOKENS.BOOKING_REPOSITORY });
 
-export const checkBookingLimitsModuleWithToken = {
+export const moduleLoader = {
   token,
-  moduleToken,
-  module: checkBookingLimitsModule,
+  loadModule: (container: Container) => {
+    container.load(moduleToken, checkBookingLimitsModule);
+  },
 };

@@ -1,3 +1,4 @@
+import type { Container } from "@evyweb/ioctopus";
 import { createModule } from "@evyweb/ioctopus";
 
 import type { ICacheService } from "@calcom/features/calendar-cache/lib/getShouldServeCache";
@@ -12,8 +13,9 @@ cacheModule.bind(token).toClass(CacheService, {
   featuresRepository: DI_TOKENS.FEATURES_REPOSITORY,
 } satisfies Record<keyof ICacheService, symbol>);
 
-export const cacheModuleWithToken = {
+export const moduleLoader = {
   token,
-  moduleToken,
-  module: cacheModule,
+  loadModule: (container: Container) => {
+    container.load(moduleToken, cacheModule);
+  },
 };

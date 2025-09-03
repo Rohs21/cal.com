@@ -1,3 +1,4 @@
+import type { Container } from "@evyweb/ioctopus";
 import { createModule } from "@evyweb/ioctopus";
 
 import type { ICheckBookingAndDurationLimitsService } from "@calcom/features/bookings/lib/handleNewBooking/checkBookingAndDurationLimits";
@@ -12,8 +13,9 @@ checkBookingAndDurationLimitsModule.bind(token).toClass(CheckBookingAndDurationL
   checkBookingLimitsService: DI_TOKENS.CHECK_BOOKING_LIMITS_SERVICE,
 } satisfies Record<keyof ICheckBookingAndDurationLimitsService, symbol>);
 
-export const checkBookingAndDurationLimitsModuleWithToken = {
+export const moduleLoader = {
   token,
-  moduleToken,
-  module: checkBookingAndDurationLimitsModule,
+  loadModule: (container: Container) => {
+    container.load(moduleToken, checkBookingAndDurationLimitsModule);
+  },
 };

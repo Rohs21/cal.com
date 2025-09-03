@@ -1,3 +1,4 @@
+import type { Container } from "@evyweb/ioctopus";
 import { createModule } from "@evyweb/ioctopus";
 
 import { FeaturesRepository } from "@calcom/features/flags/features.repository";
@@ -8,8 +9,9 @@ const token = DI_TOKENS.FEATURES_REPOSITORY;
 const moduleToken = DI_TOKENS.FEATURES_REPOSITORY_MODULE;
 featuresRepositoryModule.bind(token).toClass(FeaturesRepository, [DI_TOKENS.PRISMA_CLIENT]);
 
-export const featuresRepositoryModuleWithToken = {
+export const moduleLoader = {
   token,
-  moduleToken,
-  module: featuresRepositoryModule,
+  loadModule: (container: Container) => {
+    container.load(moduleToken, featuresRepositoryModule);
+  },
 };

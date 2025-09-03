@@ -1,39 +1,37 @@
 import { createModule } from "@evyweb/ioctopus";
 
 import { bindModuleToClassOnToken } from "@calcom/lib/di/ioctopus";
-import { bookingRepositoryModuleWithToken } from "@calcom/lib/di/modules/Booking";
-import { cacheModuleWithToken } from "@calcom/lib/di/modules/Cache";
-import { checkBookingAndDurationLimitsModuleWithToken } from "@calcom/lib/di/modules/CheckBookingAndDurationLimits";
-import { checkBookingLimitsModuleWithToken } from "@calcom/lib/di/modules/CheckBookingLimits";
-import { featuresRepositoryModuleWithToken } from "@calcom/lib/di/modules/Features";
+import { moduleLoader as bookingRepositoryModuleLoader } from "@calcom/lib/di/modules/Booking";
+import { moduleLoader as cacheModuleLoader } from "@calcom/lib/di/modules/Cache";
+import { moduleLoader as checkBookingAndDurationLimitsModuleLoader } from "@calcom/lib/di/modules/CheckBookingAndDurationLimits";
+import { moduleLoader as checkBookingLimitsModuleLoader } from "@calcom/lib/di/modules/CheckBookingLimits";
+import { moduleLoader as featuresRepositoryModuleLoader } from "@calcom/lib/di/modules/Features";
 import { DI_TOKENS } from "@calcom/lib/di/tokens";
-import { prismaModuleWithToken } from "@calcom/prisma/prisma.module";
+import { moduleLoader as prismaModuleLoader } from "@calcom/prisma/prisma.module";
 
 import { RegularBookingService } from "../../handleNewBooking";
 
-export const regularBookingServiceModule = createModule();
+const thisModule = createModule();
 const token = DI_TOKENS.REGULAR_BOOKING_SERVICE;
 const moduleToken = DI_TOKENS.REGULAR_BOOKING_SERVICE_MODULE;
-const loadDeps = bindModuleToClassOnToken({
-  module: regularBookingServiceModule,
+const loadModule = bindModuleToClassOnToken({
+  module: thisModule,
+  moduleToken,
   token,
   classs: RegularBookingService,
   depsMap: {
-    cacheService: cacheModuleWithToken,
-    checkBookingAndDurationLimitsService: checkBookingAndDurationLimitsModuleWithToken,
-    prismaClient: prismaModuleWithToken,
-    bookingRepository: bookingRepositoryModuleWithToken,
-    featuresRepository: featuresRepositoryModuleWithToken,
-    checkBookingLimitsService: checkBookingLimitsModuleWithToken,
+    cacheService: cacheModuleLoader,
+    checkBookingAndDurationLimitsService: checkBookingAndDurationLimitsModuleLoader,
+    prismaClient: prismaModuleLoader,
+    bookingRepository: bookingRepositoryModuleLoader,
+    featuresRepository: featuresRepositoryModuleLoader,
+    checkBookingLimitsService: checkBookingLimitsModuleLoader,
   },
 });
 
-const regularBookingServiceModuleWithToken = {
+export const regularBookingServiceModule = {
   token,
-  moduleToken,
-  module: regularBookingServiceModule,
+  loadModule,
 };
 
 export type { RegularBookingService };
-
-export { loadDeps, regularBookingServiceModuleWithToken };

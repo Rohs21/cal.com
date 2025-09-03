@@ -11,23 +11,25 @@ export function bindModuleToClassOnToken<TClass extends new (...args: any[]) => 
   token,
   classs,
   depsMap,
+  moduleToken,
 }: {
   module: Module;
+  moduleToken: string | symbol;
   token: string | symbol;
   classs: TClass;
   depsMap: Record<
     keyof InstanceType<TClass>["deps"],
-    { token: string | symbol; moduleToken: string | symbol; module: Module }
+    { token: string | symbol; loadModule: (container: Container) => void }
   >;
 }) {
   const depsObject = Object.fromEntries(Object.entries(depsMap).map(([key, value]) => [key, value.token]));
   module.bind(token).toClass(classs, depsObject);
 
-  return function loadDeps(container: Container) {
+  return function loadModule(container: Container) {
+    container.load(moduleToken, module);
     for (const key in depsMap) {
-      const depToken = depsMap[key as keyof typeof depsMap].moduleToken;
-      const depModule = depsMap[key as keyof typeof depsMap].module;
-      container.load(depToken, depModule);
+      const loadModule = depsMap[key as keyof typeof depsMap].loadModule;
+      loadModule(container);
     }
   };
 }

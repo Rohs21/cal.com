@@ -1,22 +1,12 @@
 import { createContainer } from "@evyweb/ioctopus";
 
 import type { RegularBookingService } from "../modules/RegularBookingServiceModule";
-import {
-  loadDeps as loadRegularBookingServiceModuleDeps,
-  regularBookingServiceModuleWithToken,
-} from "../modules/RegularBookingServiceModule";
+import { regularBookingServiceModule } from "../modules/RegularBookingServiceModule";
 
 const regularBookingServiceContainer = createContainer();
 
-regularBookingServiceContainer.load(
-  regularBookingServiceModuleWithToken.moduleToken,
-  regularBookingServiceModuleWithToken.module
-);
-
 export function getRegularBookingService(): RegularBookingService {
-  loadRegularBookingServiceModuleDeps(regularBookingServiceContainer);
+  regularBookingServiceModule.loadModule(regularBookingServiceContainer);
 
-  return regularBookingServiceContainer.get<RegularBookingService>(
-    regularBookingServiceModuleWithToken.token
-  );
+  return regularBookingServiceContainer.get<RegularBookingService>(regularBookingServiceModule.token);
 }
