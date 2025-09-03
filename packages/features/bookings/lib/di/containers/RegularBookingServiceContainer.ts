@@ -1,20 +1,22 @@
 import { createContainer } from "@evyweb/ioctopus";
 
-import { DI_TOKENS } from "@calcom/lib/di/tokens";
-
 import type { RegularBookingService } from "../modules/RegularBookingServiceModule";
 import {
-  regularBookingServiceModule,
-  loadModuleDeps,
-  moduleToken,
+  loadDeps as loadRegularBookingServiceModuleDeps,
+  regularBookingServiceModuleWithToken,
 } from "../modules/RegularBookingServiceModule";
 
 const regularBookingServiceContainer = createContainer();
 
-regularBookingServiceContainer.load(DI_TOKENS.REGULAR_BOOKING_SERVICE_MODULE, regularBookingServiceModule);
+regularBookingServiceContainer.load(
+  regularBookingServiceModuleWithToken.moduleToken,
+  regularBookingServiceModuleWithToken.module
+);
 
 export function getRegularBookingService(): RegularBookingService {
-  loadModuleDeps(regularBookingServiceContainer);
+  loadRegularBookingServiceModuleDeps(regularBookingServiceContainer);
 
-  return regularBookingServiceContainer.get<RegularBookingService>(moduleToken);
+  return regularBookingServiceContainer.get<RegularBookingService>(
+    regularBookingServiceModuleWithToken.token
+  );
 }
