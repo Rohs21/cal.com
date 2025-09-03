@@ -51,9 +51,8 @@ type BaseSessionUser = Prisma.UserGetPayload<{
     allowDynamicBooking: true;
     allowSEOIndexing: true;
     receiveMonthlyDigestEmail: true;
-    profiles: true;
-    allSelectedCalendars: true;
-    userLevelSelectedCalendars: true;
+    // Note: profiles, allSelectedCalendars, userLevelSelectedCalendars are enriched in runtime shapes
+    // and not selected directly here to avoid Prisma type inference issues
   };
 }>;
 
@@ -63,4 +62,10 @@ export interface TrpcSessionUser extends BaseSessionUser {
   organization: SessionUserOrganization;
   organizationId: number | null;
   defaultBookerLayouts: any | null;
+  // Enriched collections present on the session user
+  profiles?: any[];
+  allSelectedCalendars: any[];
+  userLevelSelectedCalendars: any[];
+  // The middleware ensures locale is always set
+  locale: string;
 }
