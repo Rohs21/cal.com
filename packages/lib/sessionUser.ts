@@ -4,14 +4,14 @@ import type { UserProfile } from "@calcom/types/UserProfile";
 
 interface SessionUserOrganization {
   id: number | null;
-  name?: string;
-  slug?: string;
+  name?: string | null;
+  slug?: string | null;
   logoUrl?: string | null;
   bannerUrl?: string | null;
   isPlatform?: boolean;
   hideBranding?: boolean;
   isOrgAdmin: boolean;
-  metadata: Record<string, any>;
+  metadata: Record<string, any> | null;
   requestedSlug: string | null;
 }
 
